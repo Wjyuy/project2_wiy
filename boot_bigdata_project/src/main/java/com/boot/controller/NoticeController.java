@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.boot.dto.Criteria;
 import com.boot.dto.FaqsDTO;
-import com.boot.dto.PageDTO;
 import com.boot.service.FaqannService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -23,22 +22,22 @@ public class NoticeController {
 	@Autowired
 	private FaqannService service;
 	
-	
-	@RequestMapping("/notice")
-	public String notice(Criteria cri, Model model) {
-		log.info("@# notice()");
-		log.info("@# cri=>"+cri);
-		
-//		model.addAttribute("list", service.listWithPaging(cri));
-		ArrayList<FaqsDTO>noticeList = service.noticelistWithPaging(cri);
-		int total = service.noticegetTotalCount(cri);
-		log.info("@# total=>"+total);
-		
-		model.addAttribute("noticeList", noticeList);
-//		model.addAttribute("pageMaker", new PageDTO(123, cri));
-		model.addAttribute("pageMaker", new PageDTO(total, cri));
-		return "notice";
-	}
+//	
+//	@RequestMapping("/notice")
+//	public String notice(Criteria cri, Model model) {
+//		log.info("@# notice()");
+//		log.info("@# cri=>"+cri);
+//		
+////		model.addAttribute("list", service.listWithPaging(cri));
+//		ArrayList<FaqsDTO>noticeList = service.noticelistWithPaging(cri);
+//		int total = service.noticegetTotalCount(cri);
+//		log.info("@# total=>"+total);
+//		
+//		model.addAttribute("noticeList", noticeList);
+////		model.addAttribute("pageMaker", new PageDTO(123, cri));
+//		model.addAttribute("pageMaker", new PageDTO(total, cri));
+//		return "notice";
+//	}
 	
 	@RequestMapping("/notice_write_ok")
 	public String notice_write_ok(FaqsDTO faqsDTO){

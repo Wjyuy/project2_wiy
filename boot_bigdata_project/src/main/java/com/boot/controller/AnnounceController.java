@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.boot.dto.AnnounceDTO;
 import com.boot.dto.Criteria;
 import com.boot.dto.FaqsDTO;
-import com.boot.dto.PageDTO;
 import com.boot.service.FaqannService;
 
 import lombok.extern.slf4j.Slf4j;
@@ -23,22 +22,22 @@ public class AnnounceController {
 
 	@Autowired
 	private FaqannService service;
-	
-	@RequestMapping("/announce")
-	public String announce(Criteria cri, Model model) {
-		log.info("@# announce()");
-		log.info("@# cri=>"+cri);
-		
-//		model.addAttribute("list", service.listWithPaging(cri));
-		ArrayList<AnnounceDTO> announceList = service.announcelistWithPaging(cri);
-		int total = service.announcegetTotalCount(cri);
-		log.info("@# total=>"+total);
-		
-		model.addAttribute("announceList", announceList);
-//		model.addAttribute("pageMaker", new PageDTO(123, cri));
-		model.addAttribute("pageMaker", new PageDTO(total, cri));
-		return "announce";
-	}
+//	
+//	@RequestMapping("/announce")
+//	public String announce(Criteria cri, Model model) {
+//		log.info("@# announce()");
+//		log.info("@# cri=>"+cri);
+//		
+////		model.addAttribute("list", service.listWithPaging(cri));
+//		ArrayList<AnnounceDTO> announceList = service.announcelistWithPaging(cri);
+//		int total = service.announcegetTotalCount(cri);
+//		log.info("@# total=>"+total);
+//		
+//		model.addAttribute("announceList", announceList);
+////		model.addAttribute("pageMaker", new PageDTO(123, cri));
+//		model.addAttribute("pageMaker", new PageDTO(total, cri));
+//		return "announce";
+//	}
 	
 	@RequestMapping("/main")
 	public String main(Criteria cri,Model model){
