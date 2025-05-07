@@ -19,7 +19,8 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Controller
 public class AnnounceController {
-// 1111111111111111111
+
+	//2222222222222222 
 	@Autowired
 	private FaqannService service;
 //	
